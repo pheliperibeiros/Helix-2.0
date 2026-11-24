@@ -1,0 +1,70 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Hélix",
+  "version": "1.0.0",
+  "identifier": "br.mp.mpto.helix",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:3000",
+    "beforeBuildCommand": "npm run build:web",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Hélix - Plataforma de Grafos Inteligente",
+        "width": 1440,
+        "height": 900,
+        "minWidth": 1024,
+        "minHeight": 680,
+        "resizable": true,
+        "fullscreen": false,
+        "center": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "publisher": "Phelipe Ribeiro da Silva",
+    "copyright": "© 2026 Phelipe Ribeiro da Silva",
+    "icon": [
+      "icons/icon.ico",
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.png"
+    ],
+    "resources": [
+      "icons/docicon.ico"
+    ],
+    "fileAssociations": [
+      {
+        "ext": ["hlx"],
+        "name": "Hélix Graph Document",
+        "description": "Documento de Grafo Hélix (.hlx)",
+        "role": "Editor",
+        "mimeType": "application/x-helix-project"
+      }
+    ],
+    "windows": {
+      "certificateThumbprint": null,
+      "digestAlgorithm": "sha256",
+      "timestampUrl": "",
+      "nsis": {
+        "installerIcon": "icons/icon.ico",
+        "headerImage": null,
+        "sidebarImage": null,
+        "installerHooks": "windows/hooks.nsh",
+        "installMode": "currentUser"
+      },
+      "wix": {
+        "language": "pt-BR"
+      }
+    }
+  }
+}
